@@ -2,6 +2,7 @@ _year_ = 2018
 _auth_ = 'Per Jaakonantti'
 
 #FOUND ALMOST ALL OF THIS WHILE GOOGLING
+#DO NOT UNDERESTIMATE THE GOOGLE /L
 
 from tkinter import *
 from tkinter.ttk import Progressbar
