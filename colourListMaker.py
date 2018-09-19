@@ -14,7 +14,7 @@ for i in range(0,numColours):
 	for  j in range(0,2):
 		tempList = list()
 		tempList.append(baseColours[j])
-		tempList.append(allColours[randint(0, numColours-1)])
+		tempList.append(allColours[i])
 		colourCombinationList.append(tempList)
 
 with open('list_colours.csv', 'w', newline='') as csvfile:
