@@ -9,27 +9,36 @@
 //		Spara info
 //		Slutmeny
 
+// ADD TIMING FOR ANSWERS
+
 colourList = [];
 globalListOfData = [];
 
 function viewChanger(viewString) {
 
 	if(viewString == "start") {
-		// Block thing show things
+		document.getElementById("thanks").style.display = "none"
+		document.getElementById("testText").style.display = "none"
+		document.getElementById("answer").style.display = "none"
+		document.getElementById("sameAsYouSaw").style.display = "none"
+		document.getElementById("startButton").style.display = "block"
 	} else if(viewString == "text") {
-
+		document.getElementById("sameAsYouSaw").style.display = "none"
+		document.getElementById("answer").style.display = "none"
+		document.getElementById("testText").style.display = "block"
+		document.getElementById("startButton").style.display = "none"
 	} else if(viewString == "noise") {
-
+		document.getElementById("testText").style.display = "none"
 	} else if(viewString == "question") {
-
-	} else if(viewString == "saving") {
-
+		document.getElementById("sameAsYouSaw").style.display = "block"
+		document.getElementById("answer").style.display = "block"
 	} else if(viewString == "end") {
-
+		document.getElementById("sameAsYouSaw").style.display = "none"
+		document.getElementById("answer").style.display = "none"
+		document.getElementById("thanks").style.display = "block"
 	} else {
 		console.log("ERROR! viewChanger did not recieve proper string");
 	}
-    
 }
 
 function readLists() {
@@ -52,9 +61,9 @@ function keyDownFunction() {
 }
 
 function listLooper(){
-	window.getElementById("text").innerHTML = getRandomText()
+	window.getElementById("testText").innerHTML = getRandomText()
 	// TODO FIX ANSWER FOR TEXT
-	window.getElementById("answer").innerHTML = "XXXX"
+	window.getElementById("sameAsYouSaw").innerHTML = "XXXX"
     viewChanger("text")
     setTimeout(viewString("noise"), 500)
     setTimeout(viewChanger("question"), 1000)
