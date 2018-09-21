@@ -16,8 +16,11 @@ for i in range(0,100):
 		tempString += capitalLetters[randint(0, capLength-1)]
 	stringList.append(tempString)
 
-with open('list_strings_' + strings +  '.csv', 'w', newline='') as csvfile:
+print(stringList)
+
+with open('list_strings_' + str(strings) +  '.csv', 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=' ',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
     for item in stringList:
+    	print(item)
     	spamwriter.writerow(item)

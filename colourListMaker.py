@@ -10,15 +10,16 @@ numColours = len(allColours)
 
 colourCombinationList = []
 
-for i in range(0,numColours):
-	for  j in range(0,2):
-		tempList = list()
-		tempList.append(baseColours[j])
-		tempList.append(allColours[i])
-		colourCombinationList.append(tempList)
+for k in range(0,2):
+	for i in range(0,numColours):
+		for  j in range(0,2):
+			tempList = list()
+			tempList.append(baseColours[j])
+			tempList.append(allColours[i])
+			colourCombinationList.append(tempList)
 
 with open('list_colours.csv', 'w', newline='') as csvfile:
-    spamwriter = csv.writer(csvfile, delimiter=' ',
+    spamwriter = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
     for item in colourCombinationList:
     	spamwriter.writerow(item)
