@@ -1,1 +1,22 @@
 /* TODO FILL THIS*/
+
+p {
+	text-align: center;
+	font-size: 60px;
+}
+
+img {
+	margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+	text-align: center;
+	font-size: 100px;
+}
+
+button {
+	margin-left: auto;
+    margin-right: auto;
+    font-size: 60px;
+}
