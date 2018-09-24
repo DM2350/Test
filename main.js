@@ -10,8 +10,8 @@
 // JUSTERA HUR OFTA DET ÄR SAMMA OCH INTE
 
 // Global Variables
-colourList = [['#247e18','#df8c16','same'],['#247e18','#d0aa2a','same'],['#247e18','#71941c','same'],['#6D1515','#1f6d15','same']];
-letterCombo = [["ABCD","EFGH"],["FHGH","SDGG"],["FFFF","FFFF"],["EFHJ","HFSA"],["FGHJ","QWER"],["FTHY","FTHY"],["ABCD","ABVC"],["AAVG","VGAA"]];
+colourList = [];
+letterCombo = [];
 globalListOfData = [];
 globalTextCounter = 0;
 globalListCounter = 0;
