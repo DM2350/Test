@@ -9,8 +9,9 @@
 // Design
 
 // Global Variables
-colourList = [];
+colourList = []; //en shufflad lista av färgkombinationer [[bakgrund, textfärg], ...]
 globalListOfData = [];
+letterCombo = []; //bokstavskombinationerna som ska visas
 
 // All colours
 green	= '#247e18'
@@ -61,7 +62,13 @@ function viewChanger(viewString) {
 }
 
 function readLists() {
-	// TODO fyller i vettig info i colourList och globalListOfData
+	// TODO fyller i vettig info i colourList och globalListOfData, [[red, green],[red, redred]...]
+	colourList = [[red, blueBlue], [red, blueGreen], [red, blueViolet], [red, greenGreen], [red, orangeOrange], [red, redRed], [red, redOrange],
+		[red, redViolet], [red, violetViolet], [red, yellowYellow], [red, yellowGreen], [red, yellowOrange][green, blueBlue], [green, blueGreen], [green, blueViolet],
+		[green, greenGreen], [green, orangeOrange], [green, redRed], [green, redOrange], [green, redViolet], [green, violetViolet], [green, yellowYellow], [green, yellowGreen],
+		[green, yellowOrange]];
+	shuffleArray(colourList);
+
 }
 
 function start() {
@@ -102,6 +109,20 @@ function noise() {
 function getRandomText() {
 	// TODO FIX THIS
 	return "TODO"
+}
+
+/**
+ * Randomize array element order in-place.
+ * Using Durstenfeld shuffle algorithm.
+ * saxat från StackOverflow
+ */
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 }
 
 viewChanger("start")
