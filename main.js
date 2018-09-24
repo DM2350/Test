@@ -1,13 +1,12 @@
 // TODO:
-// Läsa in listor // LISA
+
 // Justera timing för stimuli
-// Fixa random text // PER
+
 // Spara ner info
 // Kolla vilken tangentbordsknapp som tryckts ner // MARTIN
 // Add timing för svar
 // Färg
 // Design
-// JUSTERA HUR OFTA DET ÄR SAMMA OCH INTE
 
 // Global Variables
 
