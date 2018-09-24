@@ -1,16 +1,20 @@
 // TODO:
-// Läsa in listor
+// Läsa in listor // LISA
 // Justera timing för stimuli
-// Fixa random text
+// Fixa random text // PER
 // Spara ner info
-// Kolla vilken tangentbordsknapp som tryckts ner
+// Kolla vilken tangentbordsknapp som tryckts ner // MARTIN
 // Add timing för svar
 // Färg
 // Design
+// JUSTERA HUR OFTA DET ÄR SAMMA OCH INTE
 
 // Global Variables
-colourList = [];
+colourList = [['#247e18','#df8c16','same'],['#247e18','#d0aa2a','same'],['#247e18','#71941c','same'],['#6D1515','#1f6d15','same']];
+letterCombo = [["ABCD","EFGH"],["FHGH","SDGG"],["FFFF","FFFF"],["EFHJ","HFSA"],["FGHJ","QWER"],["FTHY","FTHY"],["ABCD","ABVC"],["AAVG","VGAA"]];
 globalListOfData = [];
+globalTextCounter = 0;
+globalListCounter = 0;
 
 // All colours
 green	= '#247e18'
@@ -20,14 +24,14 @@ blueBlue 	= '#15156d'
 blueGreen 	= '#156d5d'
 blueViolet	= '#53156d'
 greenGreen	= '#1f6d15'
-orangeOrange= '#df8c16'
+orangeOrange	= '#df8c16'
 redRed		= '#7f1717'
 redOrange	= '#b24217'
 redViolet	= '#6d1549'
-violetViolet= '#68156d'
-yellowYellow= '#d0cc2a'
-yellowGreen = '#71941c'
-yellowOrange= '#d0aa2a'
+violetViolet	= '#68156d'
+yellowYellow	= '#d0cc2a'
+yellowGreen 	= '#71941c'
+yellowOrange	= '#d0aa2a'
 
 function viewChanger(viewString) {
 
@@ -82,13 +86,55 @@ function keyDownFunction() {
 }
 
 function listLooper(){
-	viewChanger("text")
-	document.getElementById("testText").innerHTML = getRandomText()
-	// TODO FIX ANSWER FOR TEXT
-	document.getElementById("answer").innerHTML = "XXXX"
-    viewChanger("text")
-    setTimeout(noise, 1000)
-    setTimeout(question, 2000)
+	
+	if(globalListCounter<colourList.length) {
+		
+		words = getRandomText()
+
+		colours = colourList[globalListCounter]
+
+		if(colours[2] == "same") {
+			document.getElementById("testText").innerHTML = words[0]
+			document.getElementById("answer").innerHTML = words[0]
+		}
+		else {
+			document.getElementById("testText").innerHTML = words[0]
+			document.getElementById("answer").innerHTML = words[1]
+
+		}
+		
+		document.body.style.backgroundColor = colours[0];
+		document.getElementById("testText").style.color = colours[1];
+		viewChanger("text")
+
+		setTimeout(noise, 1000)
+		setTimeout(question, 2000)
+
+
+		globalListCounter +=1
+	}
+	else {
+		//TESTING DONE!!!
+		viewChanger("end")
+		JsonExport = globalListOfData
+
+		// https://stackoverflow.com/questions/33780271/export-a-json-object-to-a-text-file
+
+		const filename = 'data.json';
+		const jsonStr = JSON.stringify(JsonExport);
+
+		let element = document.createElement('a');
+		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(jsonStr));
+		element.setAttribute('download', filename);
+
+		element.style.display = 'none';
+		document.body.appendChild(element);
+
+		element.click();
+
+		document.body.removeChild(element);		
+	}
+
 }
 
 function question() {
@@ -96,12 +142,13 @@ function question() {
 }
 
 function noise() {
+	document.body.style.backgroundColor = "white";
 	viewChanger("noise")
 }
 
 function getRandomText() {
-	// TODO FIX THIS
-	return "TODO"
+	globalTextCounter += 1
+	return letterCombo[globalTextCounter-1]
 }
 
 viewChanger("start")
