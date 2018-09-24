@@ -73,12 +73,47 @@ window.addEventListener("keydown", keyDownFunction);
 
 function keyDownFunction() {
 
+	
+		//compare strings
+		//save data to globalListOfData 
+	var list = [];
+	
+	//YES
+	if ("keydown" == 37) { 
+		list.push("YES");
+		if ("testText" == "answer"){
+			list.push("CORRECT")
+			else {
+				list.push("INCORRECT")
+			}
+		}
+
+	}
+	
+	//NO
+	if ("keydown" == 39) { 
+		list.push("NO")
+		if("testText" != "answer"){
+			list.push("CORRECT")
+		}
+		else {
+			list.push("INCORRECT")
+		}
+	}
+
+}
+
+		
+
+	
+
    // TODO KOLLA OM DET ÄR RÄTT/FEL SVAR
    // SPARA DATA i listan
    //
-   // if right or wring
+   // if right or wrong
    //
    listLooper()
+		}
 }
 
 function listLooper(){
