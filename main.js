@@ -1,9 +1,10 @@
 // TODO:
 
-// Justera timing för stimuli
+// Ändra (om vi vill):
+// 	Färger
+// 	Design
+// 	Tajming av noise och question
 
-// Färg
-// Design
 // Global Variables
 
 colourList = []; //en shufflad lista av färgkombinationer [[bakgrund, textfärg], ...]
