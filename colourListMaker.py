@@ -5,7 +5,7 @@ from random import randint
 import csv
 
 baseColours = ['red','green']
-allColours = ['red', 'red-violet', 'violet', 'blue-violet', 'blue', 'blue-green', 'green', 'yellow-green', 'yellow', 'yellow-orange', 'orange', 'red-orange']
+allColours = ['redRed', 'redViolet', 'violetViolet', 'blueViolet', 'blueBlue', 'blueGreen', 'greenGreen', 'yellowGreen', 'yellowYellow', 'yellowOrange', 'orangeOrange', 'redOrange']
 alternatives = ['same', 'different']
 numColours = len(allColours)
 
