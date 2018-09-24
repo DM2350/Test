@@ -2,12 +2,8 @@
 
 // Justera timing för stimuli
 
-// Spara ner info
-// Kolla vilken tangentbordsknapp som tryckts ner // MARTIN
-// Add timing för svar
 // Färg
 // Design
-
 // Global Variables
 
 colourList = []; //en shufflad lista av färgkombinationer [[bakgrund, textfärg], ...]
@@ -16,12 +12,19 @@ globalListOfData = [];
 globalTextCounter = 0;
 globalListCounter = 0;
 globalStatus = "";
+startDate = new Date();
+endDate = new Date();
 
 same = true;
 different = false;
+
+id = prompt("Please enter file name:", "Person_1");
+
 // All colours
 green	= '#247e18'
 red 	= '#6D1515'
+blue 	= '#14306d'
+
 
 blueBlue 	= '#15156d'
 blueGreen 	= '#156d5d'
@@ -70,15 +73,15 @@ function viewChanger(viewString) {
 }
 
 function readLists() {
-	// TODO fyller i vettig info i colourList och globalListOfData, [[red, green],[red, redred]...]
 
+//colourList = [[red,redRed,same],[green,redRed,same]];
 
 colourList = [[red,redRed,same],[green,redRed,same],[red,redViolet,same],[green,redViolet,same],[red,violetViolet,same],[green,violetViolet,same],[red,blueViolet,same],[green,blueViolet,same],[red,blueBlue,same],[green,blueBlue,same],[red,blueGreen,same],[green,blueGreen,same],[red,greenGreen,same],[green,greenGreen,same],[red,yellowGreen,same],[green,yellowGreen,same],[red,yellowYellow,same],[green,yellowYellow,same],[red,yellowOrange,same],[green,yellowOrange,same],[red,orangeOrange,same],[green,orangeOrange,same],[red,redOrange,same],[green,redOrange,same],[red,redRed,different],[green,redRed,different],[red,redViolet,different],[green,redViolet,different],[red,violetViolet,different],[green,violetViolet,different],[red,blueViolet,different],[green,blueViolet,different],[red,blueBlue,different],[green,blueBlue,different],[red,blueGreen,different],[green,blueGreen,different],[red,greenGreen,different],[green,greenGreen,different],[red,yellowGreen,different],[green,yellowGreen,different],[red,yellowYellow,different],[green,yellowYellow,different],[red,yellowOrange,different],[green,yellowOrange,different],[red,orangeOrange,different],[green,orangeOrange,different],[red,redOrange,different],[green,redOrange,different]];
 
 
-letterCombo = [['RNVZ', 'RNVJ'],['GGEO', 'GLEO'],['VHOA', 'VHOL'],['NSID', 'NSJD'],['ZZKS', 'ZZRS'],['REDA', 'REDG'],['OONY', 'OOXY'],['HDFJ', 'HDFA'],['VRZL', 'RRZL'],['YTUU', 'VTUU'],['YPOC', 'YPJC'],['GRAK', 'GRRK'],['JXKF', 'JXCF'],['VSMF', 'VHMF'],['CSCF', 'CSZF'],['ICXV', 'MCXV'],['PYCX', 'FYCX'],['TUMT', 'TUNT'],['FCDS', 'FCDC'],['GCQN', 'GQQN'],['VXTZ', 'VXTV'],['GETM', 'GETI'],['APZH', 'AEZH'],['ATEO', 'ATKO'],['NZXZ', 'NZUZ'],['YFFN', 'YLFN'],['OZKS', 'OZSS'],['BKNV', 'OKNV'],['HZGK', 'HJGK'],['TZAA', 'TGAA'],['BINL', 'BIIL'],['UCPR', 'UAPR'],['UQLB', 'CQLB'],['CAYK', 'NAYK'],['NNUE', 'BNUE'],['ODBD', 'ODLD'],['VFDH', 'VFDD'],['OFJH', 'OFKH'],['CPLV', 'CYLV'],['DPDC', 'DPXC'],['SOLS', 'SSLS'],['YQBX', 'YZBX'],['CBPA', 'CJPA'],['BKZP', 'NKZP'],['KLAE', 'KLAL'],['YDRN', 'YXRN'],['HDDU', 'BDDU'],['BHKJ', 'BHKG'],['YQUD', 'YNUD'],['BNVR', 'BHVR'],['FGAN', 'CGAN'],['QDMK', 'QDMN'],['UXZL', 'UXYL'],['IJYY', 'IJIY'],['FYAY', 'SYAY'],['DFZK', 'DFDK'],['MGQK', 'MGQU'],['AMDU', 'HMDU'],['LOUB', 'LOJB'],['FMHM', 'FMXM'],['SZSF', 'SKSF'],['HUVN', 'HUXN'],['GCOP', 'GBOP'],['OKEB', 'LKEB'],['OYHU', 'OGHU'],['YVCI', 'YVCE'],['OYBH', 'OUBH'],['NXKE', 'NXKZ'],['EOQK', 'EMQK'],['MPDI', 'MFDI'],['VKTZ', 'CKTZ'],['QGGG', 'QGGT'],['SHQZ', 'SXQZ'],['IGXM', 'QGXM'],['YOND', 'NOND'],['DSNF', 'DSQF'],['TGEQ', 'TGEL'],['HCJE', 'VCJE'],['IUDL', 'ICDL'],['LNBH', 'LHBH'],['PKKV', 'GKKV'],['ODFK', 'RDFK'],['ZMHO', 'ZMHK'],,['VEQB', 'VEQL'],['AJOD', 'AJOX'],['SSJH', 'SSEH'],['NYIK', 'ZYIK'],['RUDG', 'RUUG'],['CVGZ', 'EVGZ'],['FGQM', 'FGQC'],['SRRU', 'SRSU'],['GEPM', 'PEPM'],['JQJP', 'JQJY'],['TOLQ', 'TOLY'],['JMQK', 'JMQX'],['RYBU', 'IYBU'],['DXPT', 'DXHT'],['PTJJ', 'PLJJ'],['JCOO', 'JDOO'],['MTON', 'ITON']]
+letterCombo = [['RNVZ', 'RNVJ'],['GGEO', 'GLEO'],['VHOA', 'VHOL'],['NSID', 'NSJD'],['ZZKS', 'ZZRS'],['REDA', 'REDG'],['OONY', 'OOXY'],['HDFJ', 'HDFA'],['VRZL', 'RRZL'],['YTUU', 'VTUU'],['YPOC', 'YPJC'],['GRAK', 'GRRK'],['JXKF', 'JXCF'],['VSMF', 'VHMF'],['CSCF', 'CSZF'],['ICXV', 'MCXV'],['PYCX', 'FYCX'],['TUMT', 'TUNT'],['FCDS', 'FCDC'],['GCQN', 'GQQN'],['VXTZ', 'VXTV'],['GETM', 'GETI'],['APZH', 'AEZH'],['ATEO', 'ATKO'],['NZXZ', 'NZUZ'],['YFFN', 'YLFN'],['OZKS', 'OZSS'],['BKNV', 'OKNV'],['HZGK', 'HJGK'],['TZAA', 'TGAA'],['BINL', 'BIIL'],['UCPR', 'UAPR'],['UQLB', 'CQLB'],['CAYK', 'NAYK'],['NNUE', 'BNUE'],['ODBD', 'ODLD'],['VFDH', 'VFDD'],['OFJH', 'OFKH'],['CPLV', 'CYLV'],['DPDC', 'DPXC'],['SOLS', 'SSLS'],['YQBX', 'YZBX'],['CBPA', 'CJPA'],['BKZP', 'NKZP'],['KLAE', 'KLAL'],['YDRN', 'YXRN'],['HDDU', 'BDDU'],['BHKJ', 'BHKG'],['YQUD', 'YNUD'],['BNVR', 'BHVR'],['FGAN', 'CGAN'],['QDMK', 'QDMN'],['UXZL', 'UXYL'],['IJYY', 'IJIY'],['FYAY', 'SYAY'],['DFZK', 'DFDK'],['MGQK', 'MGQU'],['AMDU', 'HMDU'],['LOUB', 'LOJB'],['FMHM', 'FMXM'],['SZSF', 'SKSF'],['HUVN', 'HUXN'],['GCOP', 'GBOP'],['OKEB', 'LKEB'],['OYHU', 'OGHU'],['YVCI', 'YVCE'],['OYBH', 'OUBH'],['NXKE', 'NXKZ'],['EOQK', 'EMQK'],['MPDI', 'MFDI'],['VKTZ', 'CKTZ'],['QGGG', 'QGGT'],['SHQZ', 'SXQZ'],['IGXM', 'QGXM'],['YOND', 'NOND'],['DSNF', 'DSQF'],['TGEQ', 'TGEL'],['HCJE', 'VCJE'],['IUDL', 'ICDL'],['LNBH', 'LHBH'],['PKKV', 'GKKV'],['ODFK', 'RDFK'],['ZMHO', 'ZMHK'],['VEQB', 'VEQL'],['AJOD', 'AJOX'],['SSJH', 'SSEH'],['NYIK', 'ZYIK'],['RUDG', 'RUUG'],['CVGZ', 'EVGZ'],['FGQM', 'FGQC'],['SRRU', 'SRSU'],['GEPM', 'PEPM'],['JQJP', 'JQJY'],['TOLQ', 'TOLY'],['JMQK', 'JMQX'],['RYBU', 'IYBU'],['DXPT', 'DXHT'],['PTJJ', 'PLJJ'],['JCOO', 'JDOO'],['MTON', 'ITON']]
 
-
+	
 
 /*
 	colourList = [[red, blueBlue], [red, blueGreen], [red, blueViolet], [red, greenGreen], [red, orangeOrange], [red, redRed], [red, redOrange],
@@ -87,7 +90,11 @@ letterCombo = [['RNVZ', 'RNVJ'],['GGEO', 'GLEO'],['VHOA', 'VHOL'],['NSID', 'NSJD
 		[green, yellowOrange]];
 */
 	shuffleArray(colourList);
-shuffleArray(letterCombo);
+	shuffleArray(letterCombo);
+
+	testCases = [[blue,orangeOrange,same],[blue,greenGreen,same],[blue,blueViolet,same]];
+
+	colourList = testCases.concat(colourList);
 
 }
 
@@ -98,49 +105,49 @@ function start() {
 
 window.addEventListener("keydown", keyDownFunction);
 
-function keyDownFunction() {
+function keyDownFunction(e) {
 
-	
-		//compare strings
-		//save data to globalListOfData 
+	if(globalStatus == "question") {
+	endDate   = new Date()
 	var list = [];
-	
+	var key = e.KeyCode ? e.keyCode : e.which
+	list.push(key)
+	list.push(colourList[globalListCounter-1][0])
+	list.push(colourList[globalListCounter-1][1])
+	list.push(colourList[globalListCounter-1][2])
+	list.push(document.getElementById("testText").innerHTML)
+	list.push(document.getElementById("answer").innerHTML)
+	list.push((endDate.getTime() - startDate.getTime()))
+	list.push(startDate)
+	list.push(endDate)
 	//YES
-	if ("keydown" == 37) { 
+	//console.log(key)
+	if (key == 39) { 
 		list.push("YES");
-		if ("testText" == "answer"){
-			list.push("CORRECT")
-			else {
-				list.push("INCORRECT")
-			}
-		}
-
-	}
-	
-	//NO
-	if ("keydown" == 39) { 
-		list.push("NO")
-		if("testText" != "answer"){
+		if (document.getElementById("testText").innerHTML == document.getElementById("answer").innerHTML){
 			list.push("CORRECT")
 		}
 		else {
 			list.push("INCORRECT")
 		}
+		globalListOfData.push(list)
+		listLooper()
+
 	}
-
-}
-
-		
-
 	
-
-   // TODO KOLLA OM DET ÄR RÄTT/FEL SVAR
-   // SPARA DATA i listan
-   //
-   // if right or wrong
-   //
-   listLooper()
+	//NO
+	else if (key == 37) { 
+		list.push("NO")
+		if(document.getElementById("testText").innerHTML != document.getElementById("answer").innerHTML){
+			list.push("CORRECT")
 		}
+		else {
+			list.push("INCORRECT")
+		}
+		globalListOfData.push(list)
+		listLooper()
+	}
+	}
 }
 
 function listLooper(){
@@ -178,7 +185,7 @@ function listLooper(){
 
 		// https://stackoverflow.com/questions/33780271/export-a-json-object-to-a-text-file
 
-		const filename = 'data.json';
+		const filename = id + '.json';
 		const jsonStr = JSON.stringify(JsonExport);
 
 		let element = document.createElement('a');
@@ -196,6 +203,7 @@ function listLooper(){
 }
 
 function question() {
+	startDate = new Date();
 	viewChanger("question")
 }
 
