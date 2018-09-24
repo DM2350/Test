@@ -28,7 +28,7 @@ for i in range(0,100):
 
 
 with open('list_strings_' + str(strings) +  '.csv', 'w', newline='') as csvfile:
-    spamwriter = csv.writer(csvfile, delimiter=' ',
+    spamwriter = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
     for item in longList:
     	print(item)
