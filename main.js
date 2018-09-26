@@ -81,14 +81,14 @@ function viewChanger(viewString) {
 		document.getElementById("startButton").style.display = "none"
 	} else if(viewString == "noise") {
 		document.getElementById("info").style.display = "none"
-		document.getElementById("image").style.display = "none"
+		//document.getElementById("image").style.display = "none"
 		document.getElementById("sameAsYouSaw").style.display = "none"
 		document.getElementById("answer").style.display = "none"
 		document.getElementById("startButton").style.display = "none"
 		//document.getElementById("noise").style.display = "block"
 		document.getElementById("testText").style.display = "none"
 	} else if(viewString == "question") {
-		document.getElementById("noise").style.display = "none"
+		//document.getElementById("noise").style.display = "none"
 		document.getElementById("info").style.display = "block"
 		//document.getElementById("image").style.display = "block"
 		document.getElementById("sameAsYouSaw").style.display = "block"
