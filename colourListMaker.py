@@ -4,8 +4,8 @@ _year_ = 2018
 from random import randint
 import csv
 
-baseColours = ['red','green']
-allColours = ['redRed', 'redViolet', 'violetViolet', 'blueViolet', 'blueBlue', 'blueGreen', 'greenGreen', 'yellowGreen', 'yellowYellow', 'yellowOrange', 'orangeOrange', 'redOrange']
+baseColours = ['brightRed','darkRed']
+allColours = ['redPink', 'redRed', 'orangeOrange', 'yellowYellow', 'yellowGreen', 'greenGreen', 'turquiseTurquise', 'turquiseBlue', 'blueBlue', 'purplePurple', 'pinkPink']
 alternatives = ['same', 'different']
 numColours = len(allColours)
 
@@ -19,6 +19,9 @@ for k in range(0,2):
 			tempList.append(allColours[i])
 			tempList.append(alternatives[k])
 			colourCombinationList.append(tempList)
+
+print(colourCombinationList)
+
 
 with open('list_colours.csv', 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=',',
