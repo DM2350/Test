@@ -1,6 +1,6 @@
 
 
-days_file = open("Person_13.txt",'r')  # CHOOSE FILE NAME HERE
+days_file = open("Person_16.txt",'r')  # CHOOSE FILE NAME HERE
 
 data = days_file.read()
 
