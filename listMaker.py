@@ -4,7 +4,7 @@ _year_ = 2018
 from random import randint
 import csv
 
-strings = 4 #CHANGE WHEN NECESSARY
+strings = 10 #CHANGE WHEN NECESSARY
 capitalLetters = "ABCDEFGHIJKLMNOPQRSTUVXYZ"
 capLength = len(capitalLetters)
 
@@ -26,10 +26,11 @@ for i in range(0,100):
 	tempList.append(tempString2)
 	longList.append(tempList)
 
+print(longList)
 
 with open('list_strings_' + str(strings) +  '.csv', 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
     for item in longList:
-    	print(item)
+    	#print(item)
     	spamwriter.writerow(item)
