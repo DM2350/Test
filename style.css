@@ -1,8 +1,13 @@
 /* TODO FILL THIS*/
 
+
+body {
+	font-family: 'Ubuntu Mono', monospace; 
+}
+
 p {
 	text-align: center;
-	font-size: 60px;
+	font-size: 40px;
 }
 
 
