@@ -45,7 +45,7 @@ function viewChanger(viewString) {
 	globalStatus = viewString;
 
 	if(viewString == "start") { 
-		document.getElementById("image").style.display = "none"
+		//document.getElementById("image").style.display = "none"
 		document.getElementById("info").style.display = "none"
 		document.getElementById("thanks").style.display = "none"
 		document.getElementById("testText").style.display = "none"
@@ -54,7 +54,7 @@ function viewChanger(viewString) {
 		document.getElementById("startButton").style.display = "block"
 	} else if(viewString == "text") {
 		document.getElementById("info").style.display = "none"
-		document.getElementById("image").style.display = "none"
+		//document.getElementById("image").style.display = "none"
 		document.getElementById("sameAsYouSaw").style.display = "none"
 		document.getElementById("answer").style.display = "none"
 		document.getElementById("testText").style.display = "block"
@@ -63,12 +63,12 @@ function viewChanger(viewString) {
 		document.getElementById("testText").style.display = "none"
 	} else if(viewString == "question") {
 		document.getElementById("info").style.display = "block"
-		document.getElementById("image").style.display = "block"
+		//document.getElementById("image").style.display = "block"
 		document.getElementById("sameAsYouSaw").style.display = "block"
 		document.getElementById("answer").style.display = "block"
 	} else if(viewString == "end") {
 		document.getElementById("info").style.display = "none"
-		document.getElementById("image").style.display = "none"
+		//document.getElementById("image").style.display = "none"
 		document.getElementById("sameAsYouSaw").style.display = "none"
 		document.getElementById("answer").style.display = "none"
 		document.getElementById("thanks").style.display = "block"
