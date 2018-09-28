@@ -20,6 +20,7 @@ globalStatus = "";
 startDate = new Date();
 endDate = new Date();
 
+
 same = true;
 different = false;
 
@@ -48,8 +49,8 @@ yellowOrange	= '#d0aa2a'
 
 redPink = "#FF007C";
 redRed  = "#FF1100";
-orangeOrange = "FF9A00";
-yellowYellow = "FFE600";
+orangeOrange = "#FF9A00";
+yellowYellow = "#FFE600";
 yellowGreen = "#A5FE00";
 greenGreen = "#00FD56";
 turquiseTurquise = "#00FFE8";
@@ -73,6 +74,7 @@ function viewChanger(viewString) {
 		document.getElementById("sameAsYouSaw").style.display = "none"
 		document.getElementById("startButton").style.display = "block"
 	} else if(viewString == "text") {
+		document.getElementById("infoText").style.display = "none"
 		document.getElementById("info").style.display = "none"
 		//document.getElementById("image").style.display = "none"
 		document.getElementById("sameAsYouSaw").style.display = "none"
@@ -110,7 +112,8 @@ function readLists() {
 
 //colourList = [[red,redRed,same],[green,redRed,same],[red,redViolet,same],[green,redViolet,same],[red,violetViolet,same],[green,violetViolet,same],[red,blueViolet,same],[green,blueViolet,same],[red,blueBlue,same],[green,blueBlue,same],[red,blueGreen,same],[green,blueGreen,same],[red,greenGreen,same],[green,greenGreen,same],[red,yellowGreen,same],[green,yellowGreen,same],[red,yellowYellow,same],[green,yellowYellow,same],[red,yellowOrange,same],[green,yellowOrange,same],[red,orangeOrange,same],[green,orangeOrange,same],[red,redOrange,same],[green,redOrange,same],[red,redRed,different],[green,redRed,different],[red,redViolet,different],[green,redViolet,different],[red,violetViolet,different],[green,violetViolet,different],[red,blueViolet,different],[green,blueViolet,different],[red,blueBlue,different],[green,blueBlue,different],[red,blueGreen,different],[green,blueGreen,different],[red,greenGreen,different],[green,greenGreen,different],[red,yellowGreen,different],[green,yellowGreen,different],[red,yellowYellow,different],[green,yellowYellow,different],[red,yellowOrange,different],[green,yellowOrange,different],[red,orangeOrange,different],[green,orangeOrange,different],[red,redOrange,different],[green,redOrange,different]];
 
-colourList = [[brightRed,redPink,same],[darkRed,redPink,same],[brightRed,redRed,same],[darkRed,redRed,same],[brightRed,orangeOrange,same],[darkRed,orangeOrange,same],[brightRed,yellowYellow,same],[darkRed,yellowYellow,same],[brightRed,yellowGreen,same],[darkRed,yellowGreen,same],[brightRed,greenGreen,same],[darkRed,greenGreen,same],[brightRed,turquiseTurquise,same],[darkRed,turquiseTurquise,same],[brightRed,turquiseBlue,same],[darkRed,turquiseBlue,same],[brightRed,blueBlue,same],[darkRed,blueBlue,same],[brightRed,purplePurple,same],[darkRed,purplePurple,same],[brightRed,pinkPink,same],[darkRed,pinkPink,same],[brightRed,redPink,different],[darkRed,redPink,different],[brightRed,redRed,different],[darkRed,redRed,different],[brightRed,orangeOrange,different],[darkRed,orangeOrange,different],[brightRed,yellowYellow,different],[darkRed,yellowYellow,different],[brightRed,yellowGreen,different],[darkRed,yellowGreen,different],[brightRed,greenGreen,different],[darkRed,greenGreen,different],[brightRed,turquiseTurquise,different],[darkRed,turquiseTurquise,different],[brightRed,turquiseBlue,different],[darkRed,turquiseBlue,different],[brightRed,blueBlue,different],[darkRed,blueBlue,different],[brightRed,purplePurple,different],[darkRed,purplePurple,different],[brightRed,pinkPink,different],[darkRed,pinkPink,different]]
+colourList = [[brightRed, redRed, same], [darkRed, redRed, same], [brightRed, yellowYellow, same], [darkRed, yellowYellow, same], [brightRed, greenGreen, same], [darkRed, greenGreen, same], [brightRed, turquiseTurquise, same], [darkRed, turquiseTurquise, same], [brightRed, blueBlue, same], [darkRed, blueBlue, same], [brightRed, pinkPink, same], [darkRed, pinkPink, same], [brightRed, redRed, different], [darkRed, redRed, different], [brightRed, yellowYellow, different], [darkRed, yellowYellow, different], [brightRed, greenGreen, different], [darkRed, greenGreen, different], [brightRed, turquiseTurquise, different], [darkRed, turquiseTurquise, different], [brightRed, blueBlue, different], [darkRed, blueBlue, different], [brightRed, pinkPink, different], [darkRed, pinkPink, different], [brightRed, redRed, same], [darkRed, redRed, same], [brightRed, yellowYellow, same], [darkRed, yellowYellow, same], [brightRed, greenGreen, same], [darkRed, greenGreen, same], [brightRed, turquiseTurquise, same], [darkRed, turquiseTurquise, same], [brightRed, blueBlue, same], [darkRed, blueBlue, same], [brightRed, pinkPink, same], [darkRed, pinkPink, same], [brightRed, redRed, different], [darkRed, redRed, different], [brightRed, yellowYellow, different], [darkRed, yellowYellow, different], [brightRed, greenGreen, different], [darkRed, greenGreen, different], [brightRed, turquiseTurquise, different], [darkRed, turquiseTurquise, different], [brightRed, blueBlue, different], [darkRed, blueBlue, different], [brightRed, pinkPink, different], [darkRed, pinkPink, different]]
+
 
 // 4 letters
 letterCombo4 = [['P K T B', 'P K T D'], ['J B P Q', 'J B P S'], ['Z C F P', 'Z K F P'], ['B S Q R', 'B M Q R'], ['S Q F P', 'C Q F P'], ['B K S V', 'T K S V'], ['L D N H', 'L J N H'], ['S D C G', 'S D C P'], ['F L M V', 'F L M T'], ['Z X N B', 'Z X Q B'], ['P X B L', 'V X B L'], ['N K F G', 'N K L G'], ['S T D H', 'C T D S'], ['F P M T', 'H P M T'], ['T J Z H', 'J C Z H'], ['H M G Z', 'Q M G Z'], ['J Z L K', 'J P L K'], ['Z L B G', 'T L B G'], ['C P H T', 'C M H V'], ['R P J Q', 'R N J Q'], ['R H G Z', 'R N G Z'], ['J F D V', 'J P D V'], ['V D S K', 'V D S Z'], ['Z D G J', 'N D G J'], ['H S Q X', 'H G Q X'], ['V R H T', 'V R H K'], ['S C J T', 'B C J T'], ['D M J P', 'D M X P'], ['R N X K', 'R N F K'], ['N K B P', 'N K B Z'], ['Z X G T', 'Z X G H'], ['N G Q M', 'N K Q M'], ['S K B P', 'H K B P'], ['S H N P', 'S X N P'], ['N L S F', 'N L Q F'], ['G Z F M', 'S Z G M'], ['C H N F', 'H F N T'], ['T P K L', 'X P K L'], ['V F B K', 'V F B M'], ['N M G T', 'N Q G T'], ['G B X Q', 'G B M Q'], ['Z S F D', 'Z S F G'], ['H S X F', 'H L X F'], ['H P K C', 'H G K C'], ['G Q D K', 'G Q R K'], ['R C P X', 'R C B X'], ['B L G H', 'B L F H'], ['Q Z J D', 'R Z J D'], ['Z H P R', 'Z M P R'], ['Q F K Z', 'Q F K B'], ['S N T R', 'S P T R'], ['V L B X', 'V L B P'], ['D P L R', 'H P R C'], ['H J P N', 'H J F N'], ['L N P G', 'T N P G'], ['K R H J', 'K R H N'], ['J V P X', 'J N P X'], ['C P K S', 'C M K S'], ['R T P H', 'R T D H'], ['P J V K', 'Z J V K'], ['X B Q G', 'X S Q G'], ['D X S H', 'D X S C'], ['J B N X', 'Z B N X'], ['H M V Z', 'Q M V Z'], ['N P R L', 'N P C L'], ['R B T H', 'R T X V'], ['B M D Z', 'B L D Z'], ['P K N R', 'P K X R'], ['N S F Z', 'M S F Z'], ['K T C M', 'K T F M'], ['Q V L J', 'Q V B J'], ['V C F J', 'T C F J'], ['Z J D G', 'Z B D G'], ['R L N J', 'D L N J'], ['S J F H', 'S C F H'], ['Q K G N', 'Q K C N'], ['S J V C', 'S B Q K'], ['Z P B N', 'Z P B Q'], ['Q X H F', 'P X H F'], ['T G P Q', 'T R P Q'], ['M N L C', 'M N D C'], ['T M C N', 'T H C N'], ['S J N F', 'S M N F'], ['F L C Q', 'F Z C Q'], ['D B X N', 'D B H N'], ['D F X J', 'D F X P'], ['S Q V B', 'S Q Z B'], ['D G Z X', 'D G Z V'], ['X J Z D', 'X S Z D'], ['L Q C P', 'L Q C Z'], ['X C R S', 'R Z C S'], ['C J N R', 'C J N G'], ['R B N Z', 'F X Q Z'], ['C S Z J', 'C S Z H'], ['V G L P', 'V T L P'], ['Q H Z S', 'Q H Z F'], ['D R M B', 'D R M P'], ['P K J X', 'D K J X'], ['X S V P', 'X S V M'], ['X V K N', 'X V Z N']]
@@ -134,7 +137,7 @@ letterCombo6 = [['J H M D Z S', 'J H M D Z Q'], ['N D P L B Z', 'N D P L Q Z'], 
 	shuffleArray(colourList);
 	shuffleArray(letterCombo);
 
-	testCases = [[blue,orangeOrange,same],[blue,greenGreen,same],[blue,pinkPink,same]];
+	testCases = [[blue,yellowYellow,same],[blue,greenGreen,different],[blue,pinkPink,same],[blue,turquiseTurquise,different]];
 
 	colourList = testCases.concat(colourList);
 
@@ -199,13 +202,14 @@ function listLooper(){
 		viewChanger("noise")
 
 		delay = 0;
-
+		globalListCounter +=1
+		document.getElementById("progress").innerHTML = globalListCounter + "/" + colourList.length
 		setTimeout(text, delay)
 		setTimeout(noise, stimuliTime + delay)
 		setTimeout(question, stimuliTime + pauseTime + delay)
 
 
-		globalListCounter +=1
+		
 	}
 	else {
 		//TESTING DONE!!!
@@ -235,7 +239,7 @@ function text() {
 
 		words = getRandomText()
 
-		colours = colourList[globalListCounter]
+		colours = colourList[globalListCounter-1]
 
 		if(colours[2]) {
 			document.getElementById("testText").innerHTML = words[0]

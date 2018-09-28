@@ -5,13 +5,15 @@ from random import randint
 import csv
 
 baseColours = ['brightRed','darkRed']
-allColours = ['redPink', 'redRed', 'orangeOrange', 'yellowYellow', 'yellowGreen', 'greenGreen', 'turquiseTurquise', 'turquiseBlue', 'blueBlue', 'purplePurple', 'pinkPink']
-alternatives = ['same', 'different']
+#allColours = ['redPink', 'redRed', 'orangeOrange', 'yellowYellow', 'yellowGreen', 'greenGreen', 'turquiseTurquise', 'turquiseBlue', 'blueBlue', 'purplePurple', 'pinkPink']
+allColours = ['redRed', 'yellowYellow', 'greenGreen', 'turquiseTurquise', 'blueBlue', 'pinkPink']
+
+alternatives = ['same', 'different','same', 'different']
 numColours = len(allColours)
 
 colourCombinationList = []
 
-for k in range(0,2):
+for k in range(0,4):
 	for i in range(0,numColours):
 		for  j in range(0,2):
 			tempList = list()
