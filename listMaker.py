@@ -4,8 +4,8 @@ _year_ = 2018
 from random import randint
 import csv
 
-strings = 10 #CHANGE WHEN NECESSARY
-capitalLetters = "ABCDEFGHIJKLMNOPQRSTUVXYZ"
+strings = 6 #CHANGE WHEN NECESSARY
+capitalLetters = "BCDFGHJKLMNPQRSTVXZ"
 capLength = len(capitalLetters)
 
 longList = []
@@ -13,17 +13,21 @@ longList = []
 for i in range(0,100):
 	tempList = list()
 	tempString = str()
-	for j in range(0,strings):
-		tempString += capitalLetters[randint(0, capLength-1)]
-	tempList.append(tempString)
+	while len(''.join(set(tempString))) != strings:
+		tempString = str()
+		for j in range(0,strings):
+			tempString += capitalLetters[randint(0, capLength-1)]
+	tempList.append(tempString.replace("", " ")[1: -1])
 
 	tempString2 = tempString
-	while(tempString == tempString2):
+	first = True
+	while(tempString == tempString2 or len(''.join(set(tempString2))) != strings) or first:
+		first = False
 		changer = randint(0, strings-1)
 		listA = list(tempString2)
 		listA[changer] = capitalLetters[randint(0, capLength-1)]
 		tempString2 = ''.join(listA)
-	tempList.append(tempString2)
+	tempList.append(tempString2.replace("", " ")[1: -1])
 	longList.append(tempList)
 
 print(longList)

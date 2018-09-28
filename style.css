@@ -26,3 +26,13 @@ button {
     margin-right: auto;
     font-size: 60px;
 }
+
+#testText{
+	margin-left: 10%;
+	text-align: left;
+}
+
+#answer{
+	margin-right: 10%;
+	text-align: right;
+}
